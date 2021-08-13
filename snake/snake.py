@@ -7,7 +7,7 @@ class Snake(object):
         self.length = 1
         self.positions = [((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))]
         self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
-        self.color = (17, 24, 47)
+        self.color = (17, 24, 37)
 
     def get_head_position(self):
         return self.positions[0]
@@ -38,7 +38,7 @@ class Snake(object):
         for p in self.positions:
             r = pygame.Rect((p[0], p[1]), (GRIDSIZE, GRIDSIZE))
             pygame.draw.rect(surface, self.color, r)
-            pygame.draw.rect(surface, (93, 216, 228), r, 1)
+            pygame.draw.rect(surface, (93, 216, 218), r, 1)
             
     def handle_keys(self):
         for event in pygame.event.get():
@@ -58,7 +58,7 @@ class Snake(object):
 class Food(object):
     def __init__(self):
         self.position = (0, 0)
-        self.color = (233, 163, 49)
+        self.color = (213, 173, 49)
         self.randomize_position()
 
     def randomize_position(self):
